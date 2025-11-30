@@ -40,6 +40,10 @@ app.get('/contact', (req, res) => {
      res.send('This is contact page !');
 })
 
+app.get('/home', (req, res) => {
+     res.send('This is home page !');
+})
+
 app.use('/api/v1/auth', authRoute);
 app.use('/api/v1/user', userRoute);
 
