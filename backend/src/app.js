@@ -45,7 +45,7 @@ app.get('/home', (req, res) => {
 })
 
 app.get('/cicd', (req, res) => {
-     res.send('This is CICD pipeline ');
+     res.send('This is CICD pipeline after push');
 })
 
 app.use('/api/v1/auth', authRoute);
