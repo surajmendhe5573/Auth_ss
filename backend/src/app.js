@@ -48,6 +48,10 @@ app.get('/cicd', (req, res) => {
      res.send('This is CICD pipeline after push');
 })
 
+app.get('/msg', (req, res) => {
+     res.send('This is CICD Message !');
+})
+
 app.use('/api/v1/auth', authRoute);
 app.use('/api/v1/user', userRoute);
 
