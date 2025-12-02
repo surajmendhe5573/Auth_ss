@@ -49,7 +49,7 @@ app.get('/cicd', (req, res) => {
 })
 
 app.get('/msg', (req, res) => {
-     res.send('Welcome to the cicd pipeline Dev');
+     res.send('Welcome to the cicd pipeline');
 })
 
 app.use('/api/v1/auth', authRoute);
