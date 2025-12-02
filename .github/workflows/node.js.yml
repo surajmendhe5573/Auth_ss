@@ -12,7 +12,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Connect to EC2 & Deploy
+      - name: Deploy to EC2
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.EC2_HOST }}
@@ -20,6 +20,8 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd ${{ secrets.EC2_PATH }}
+            git reset --hard
             git pull origin main
             npm install --production
-            pm2 restart backend
+            pm2 restart backend || pm2 start src/server.js --name backend
+            pm2 save
