@@ -45,7 +45,7 @@ app.get('/home', (req, res) => {
 })
 
 app.get('/cicd', (req, res) => {
-     res.send(`This is CICD pipeline after push ${process.env.NAME}, ${process.env.CITY}`);
+     res.send(`This is CICD pipeline after push ${process.env.NAME}, ${process.env.CITY}, ${process.env.BATCH}`);
 })
 
 app.get('/msg', (req, res) => {
